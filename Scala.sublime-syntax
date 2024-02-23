@@ -1,7 +1,7 @@
 %YAML 1.2
 ---
 # http://www.sublimetext.com/docs/3/syntax.html
-name: Scala
+name: Scala 3
 scope: source.scala
 
 file_extensions:
@@ -16,7 +16,7 @@ first_line_match: |-
 
 variables:
   # all reserved words (https://www.safaribooksonline.com/library/view/learning-scala/9781449368814/apa.html)
-  keywords: '\b(?:abstract|case|catch|class|def|do|else|extends|false|final|finally|for|forSome|if|implicit|import|lazy|match|new|null|object|override|package|private|protected|return|sealed|super|this|throw|trait|true|try|type|val|var|while|with|yield)\b'
+  keywords: '\b(?:abstract|case|catch|class|def|do|else|enum|extends|false|final|finally|for|forSome|given|if|implicit|import|inline|lazy|match|new|null|object|opaque|override|package|private|protected|return|sealed|super|this|throw|trait|true|try|type|using|val|var|while|with|yield)\b'
 
   # lookaround for operators
   nonopchar: '[[[:alpha:]]0-9\s\(\)\[\]\{\}'']'
@@ -351,17 +351,27 @@ contexts:
         1: keyword.declaration.function.scala
         2: entity.name.function.scala
       push: function-type-parameter-list
-    - match: '\b(?:(case)\s+)?(class|trait|object)(?:\s+({{id}}))'
+    - match: '\b(?:(case)\s+)?(class|enum|trait|object)(?:\s+({{id}}))'
       scope: meta.class.identifier.scala
       captures:
         1: keyword.declaration.class.scala
         2: keyword.declaration.class.scala
         3: entity.name.class.scala
       push: class-type-parameter-list
-    - match: '\b(type)\s+({{id}})'
+
+    # enum case members
+    - match: '\b(case)\s+({{upperid}})(?=.*extends)'
+      scope: meta.class.identifier.scala
+      captures:
+        1: keyword.declaration.class.scala
+        2: entity.name.class.scala
+      push: class-type-parameter-list
+
+    - match: '\b(?:(opaque)\s+)?(type)\s+({{id}})'
       captures:
         1: storage.type.scala
-        2: entity.name.type.scala
+        2: storage.type.scala
+        3: entity.name.type.scala
       push:
         - match: '(?=[\n;\}\)\]])'
           pop: true
@@ -388,6 +398,9 @@ contexts:
         1: storage.type.volatile.scala
         2: variable.other.readwrite.scala
     - match: '\bval\b'
+      scope: storage.type.stable.scala
+      push: val-simple-body
+    - match: '\bgiven\b'
       scope: storage.type.stable.scala
       push: val-simple-body
     - match: '\b(package)\s+(object)\s+({{id}})'
@@ -520,7 +533,7 @@ contexts:
   # this is included when a single newline is found in a declaration
   # you should never push/set this context, only include
   decl-newline-double-check:
-    - match: '(?=[\{\}\)]|\b(?:case|class|def|val|var|trait|object|private|protected|for|while|if|final|sealed|implicit|type|import|override)\b)'
+    - match: '(?=[\{\}\)]|\b(?:case|class|def|enum|val|var|trait|object|private|protected|for|while|if|inline|final|given|sealed|implicit|type|import|opaque|override|using)\b)'
       pop: true
     - match: '\n'
       pop: true
@@ -1044,7 +1057,7 @@ contexts:
       scope: invalid.keyword.dangling-with.scala
     - match: \bforSome\b
       scope: keyword.declaration.scala
-    - match: \b(?:(?:case\s+)?class|trait|object)\b
+    - match: \b(?:(?:case\s+)?class|enum|trait|object)\b
       scope: keyword.declaration.class.scala
     - match: \bdef\b
       scope: keyword.declaration.function.scala
@@ -1086,7 +1099,7 @@ contexts:
   storage-modifiers:
     - match: '\b(?:private\[\S+\]|protected\[\S+\]|private|protected)\b'
       scope: storage.modifier.access.scala
-    - match: \b(?:abstract|final|lazy|sealed|implicit|override)\b
+    - match: \b(?:abstract|final|inline|lazy|sealed|implicit|override|using)\b
       scope: storage.modifier.other.scala
 
   # see http://www.scala-lang.org/docu/files/ScalaReference.pdf part 1.3.5-6 (page 18)
