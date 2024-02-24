@@ -346,6 +346,16 @@ contexts:
       pop: true
 
   declarations:
+    - match: '\bgiven(?=\s+{{id}})'
+      scope: storage.type.stable.scala
+      push:
+        - match: '(?=\s+{{id}}:)'
+          set: val-simple-body
+        - match: '\s+({{id}})'
+          captures:
+            1: entity.name.function.scala
+          set: function-type-parameter-list
+
     - match: '\b(def)\s+({{id}})'
       captures:
         1: keyword.declaration.function.scala
@@ -398,9 +408,6 @@ contexts:
         1: storage.type.volatile.scala
         2: variable.other.readwrite.scala
     - match: '\bval\b'
-      scope: storage.type.stable.scala
-      push: val-simple-body
-    - match: '\bgiven\b'
       scope: storage.type.stable.scala
       push: val-simple-body
     - match: '\b(package)\s+(object)\s+({{id}})'
