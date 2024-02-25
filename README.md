@@ -67,7 +67,7 @@ git pull origin upd-build-4169
 
 #### Known limitations
 
-- [ ] A `given`'s name is highlighted as if it was a `def` until a type ascription is added
+- [ ] The types of anonymous `given`s are not highlighted correctly
 
 ### `using`
 
