@@ -35,15 +35,9 @@ git pull origin upd-build-4169
 
 #### Known limitations
 
-- [ ] `enum` members specified with shorthand syntax aren't highlighted, e.g.
-    - ```scala
-      enum Foo {
-        case Bar, Baz
-          // ^^^^^^^^
-          // these aren't highlighted
-      }
-      ```
-- [ ] `enum` members names aren't highlighted until the `extends` keyword is present
+- `enum` members specified with shorthand syntax aren't highlighted, e.g.
+    - ![shorthand enum members](https://github.com/mrdziuban/sublime-scala-3-syntax/assets/4718399/45f7307d-c2b4-4db0-95ec-3436633f127b)
+- `enum` members names aren't highlighted until the `extends` keyword is present
 
 ### `export`
 
@@ -67,7 +61,8 @@ git pull origin upd-build-4169
 
 #### Known limitations
 
-- [ ] The types of anonymous `given`s are not highlighted correctly
+- The types of anonymous `given`s are not highlighted correctly, e.g.
+    - ![anonymous given](https://github.com/mrdziuban/sublime-scala-3-syntax/assets/4718399/623f9c26-e23e-490b-b005-6ae31c8de1a6)
 
 ### `using`
 
@@ -81,7 +76,8 @@ git pull origin upd-build-4169
 
 #### Known limitations
 
-- [ ] The types of `using` parameters aren't highlighted
+- The types of anonymous `using` parameters aren't highlighted, e.g.
+    - ![anonymous using](https://github.com/mrdziuban/sublime-scala-3-syntax/assets/4718399/4bfcacbf-d95f-43ff-842d-80aa21e0f133)
 
 ### `opaque type`
 
@@ -92,3 +88,13 @@ git pull origin upd-build-4169
 #### AFter
 
 ![opaque type after](https://github.com/mrdziuban/sublime-scala-3-syntax/assets/4718399/532cf571-11c7-47cb-b9d6-f5ec7f311b35)
+
+### `inline`
+
+#### Before
+
+![inline before](https://github.com/mrdziuban/sublime-scala-3-syntax/assets/4718399/eb18472c-8b0e-4984-8f5b-94581ad8fe3c)
+
+#### After
+
+![inline after](https://github.com/mrdziuban/sublime-scala-3-syntax/assets/4718399/aa7b5e9f-f243-4120-8935-94c0887d62a2)
