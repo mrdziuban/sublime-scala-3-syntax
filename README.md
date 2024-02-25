@@ -2,20 +2,69 @@
 
 This repository provides a modified version of Sublime Text's default syntax highlighting for Scala.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Installation](#installation)
+  - [Fresh installation](#fresh-installation)
+  - [Update an installation](#update-an-installation)
+- [Supported syntax](#supported-syntax)
+  - [`enum`](#enum)
+    - [Before](#before)
+    - [After](#after)
+    - [Known limitations](#known-limitations)
+  - [`export`](#export)
+    - [Before](#before-1)
+    - [After](#after-1)
+  - [`given`](#given)
+    - [Before](#before-2)
+    - [After](#after-2)
+    - [Known limitations](#known-limitations-1)
+  - [`using`](#using)
+    - [Before](#before-3)
+    - [After](#after-3)
+    - [Known limitations](#known-limitations-2)
+  - [`opaque type`](#opaque-type)
+    - [Before](#before-4)
+    - [AFter](#after)
+  - [`inline`](#inline)
+    - [Before](#before-5)
+    - [After](#after-4)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Installation
 
-For a fresh installation, clone the latest branch of the repository into your Sublime Text packages directory:
+### Fresh installation
+
+Clone the latest branch of the repository into your Sublime Text packages directory:
 
 ```bash
 # On macOS
-cd '~/Library/Application Support/Sublime Text/Packages'
+cd "$HOME/Library/Application Support/Sublime Text/Packages"
 git clone https://github.com/mrdziuban/sublime-scala-3-syntax --branch upd-build-4169 --single-branch
 ```
 
-To update an existing installation, checkout and pull the latest branch:
+To associate the syntax with all `.scala`, `.sbt`, and `.sc` files, open a settings file:
 
 ```bash
-cd '~/Library/Application Support/Sublime Text/Packages/sublime-scala-3-syntax'
+subl "$HOME/Library/Application Support/Sublime Text/Packages/User/Scala 3.sublime-settings"
+```
+
+and add the following content:
+
+```json
+{
+  "extensions": ["scala", "sbt", "sc"]
+}
+```
+
+### Update an installation
+
+Check out and pull the latest branch:
+
+```bash
+cd "$HOME/Library/Application Support/Sublime Text/Packages/sublime-scala-3-syntax"
 git fetch
 git checkout upd-build-4169
 git pull origin upd-build-4169
