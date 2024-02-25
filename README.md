@@ -37,12 +37,12 @@ This repository provides a modified version of Sublime Text's default syntax hig
 
 ### Fresh installation
 
-Clone the latest branch of the repository into your Sublime Text packages directory:
+Clone the repository into your Sublime Text packages directory:
 
 ```bash
 # On macOS
 cd "$HOME/Library/Application Support/Sublime Text/Packages"
-git clone https://github.com/mrdziuban/sublime-scala-3-syntax --branch upd-build-4169 --single-branch
+git clone https://github.com/mrdziuban/sublime-scala-3-syntax
 ```
 
 To associate the syntax with all `.scala`, `.sbt`, and `.sc` files, open a settings file:
