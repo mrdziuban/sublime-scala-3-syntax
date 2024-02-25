@@ -350,7 +350,7 @@ contexts:
     - match: '\bgiven(?=\s+{{id}})?'
       scope: storage.type.stable.scala
       push:
-        - match: '\s+({{id}})(?=\[|\()'
+        - match: '\s+({{id}})?(?=\[|\()'
           captures:
             1: entity.name.function.scala
           set: function-type-parameter-list
