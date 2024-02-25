@@ -67,7 +67,6 @@ git pull origin upd-build-4169
 
 #### Known limitations
 
-- [ ] The `given` keyword isn't highlighted if a name is not provided
 - [ ] A `given`'s name is highlighted as if it was a `def` until a type ascription is added
 
 ### `using`

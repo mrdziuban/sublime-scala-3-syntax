@@ -347,7 +347,7 @@ contexts:
       pop: true
 
   declarations:
-    - match: '\bgiven(?=\s+{{id}})'
+    - match: '\bgiven(?=\s+{{id}})?'
       scope: storage.type.stable.scala
       push:
         - match: '(?=\s+{{id}}:)'
