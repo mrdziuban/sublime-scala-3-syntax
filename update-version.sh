@@ -12,8 +12,6 @@ if [ ! -z "$(git status --porcelain)" ]; then
   exit 1
 fi
 
-set -x
-
 scriptDir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 appContents="/Applications/Sublime Text.app/Contents"
 
@@ -30,6 +28,8 @@ fi
 
 tmpdir="$(mktemp -d)"
 trap 'rm -rf "$tmpdir"' EXIT
+
+set -x
 
 pkg='Scala.sublime-package'
 syntax='Scala.sublime-syntax'
