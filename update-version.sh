@@ -46,8 +46,8 @@ git reset --hard "origin/base-build-$oldVersion"
 
 cp "$tmpdir/$syntax" ./
 git add "$syntax"
-git commit --allow-empty "Copy Scala syntax from Sublime Text build $newVersion"
+git commit --allow-empty -m "Copy Scala syntax from Sublime Text build $newVersion"
 
 git checkout -b "upd-build-$newVersion"
 git reset --hard "origin/upd-build-$oldVersion"
-git rebase -i "base-build-$newVersion"
+git rebase "base-build-$newVersion"
