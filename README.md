@@ -142,7 +142,7 @@ I have no plans to support [significant indentation/optional braces](https://doc
 
 ![opaque type before](https://github.com/mrdziuban/sublime-scala-3-syntax/assets/4718399/ec11e5e9-b865-4718-87f8-8b0c049dfc7a)
 
-#### AFter
+#### After
 
 ![opaque type after](https://github.com/mrdziuban/sublime-scala-3-syntax/assets/4718399/532cf571-11c7-47cb-b9d6-f5ec7f311b35)
 
