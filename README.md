@@ -2,12 +2,16 @@
 
 This repository provides a modified version of Sublime Text's default syntax highlighting for Scala.
 
+To view the differences between the default syntax and what this provides, see the changes to
+`Scala.sublime-syntax` here: https://github.com/mrdziuban/sublime-scala-3-syntax/compare/base-build-4169...upd-build-4169
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Installation](#installation)
   - [Fresh installation](#fresh-installation)
   - [Update an installation](#update-an-installation)
+- [Non-goals](#non-goals)
 - [Supported syntax](#supported-syntax)
   - [`enum`](#enum)
     - [Before](#before)
