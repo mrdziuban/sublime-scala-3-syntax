@@ -70,6 +70,10 @@ git checkout upd-build-4169
 git pull origin upd-build-4169
 ```
 
+## Non-goals
+
+I have no plans to support [significant indentation/optional braces](https://docs.scala-lang.org/scala3/reference/other-new-features/indentation.html).
+
 ## Supported syntax
 
 ### `enum`
