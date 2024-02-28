@@ -20,20 +20,23 @@ To view the differences between the default syntax and what this provides, see t
   - [`export`](#export)
     - [Before](#before-1)
     - [After](#after-1)
-  - [`given`](#given)
+  - [`extension`](#extension)
     - [Before](#before-2)
     - [After](#after-2)
-    - [Known limitations](#known-limitations-1)
-  - [`using`](#using)
+  - [`given`](#given)
     - [Before](#before-3)
     - [After](#after-3)
+    - [Known limitations](#known-limitations-1)
+  - [`using`](#using)
+    - [Before](#before-4)
+    - [After](#after-4)
     - [Known limitations](#known-limitations-2)
   - [`opaque type`](#opaque-type)
-    - [Before](#before-4)
-    - [AFter](#after)
-  - [`inline`](#inline)
     - [Before](#before-5)
-    - [After](#after-4)
+    - [After](#after-5)
+  - [`inline`](#inline)
+    - [Before](#before-6)
+    - [After](#after-6)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -105,6 +108,16 @@ I have no plans to support [significant indentation/optional braces](https://doc
 #### After
 
 ![export after](https://github.com/mrdziuban/sublime-scala-3-syntax/assets/4718399/2502b43e-baf5-407b-88a5-01a5867cf2d4)
+
+### `extension`
+
+#### Before
+
+![extension before](https://github.com/mrdziuban/sublime-scala-3-syntax/assets/4718399/fb8fe801-6e1a-4172-96b8-70f877a6a369)
+
+#### After
+
+![extension after](https://github.com/mrdziuban/sublime-scala-3-syntax/assets/4718399/b76d98af-3f03-486c-a6be-3219278b70b0)
 
 ### `given`
 

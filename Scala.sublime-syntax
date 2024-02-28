@@ -16,7 +16,7 @@ first_line_match: |-
 
 variables:
   # all reserved words (https://www.safaribooksonline.com/library/view/learning-scala/9781449368814/apa.html)
-  keywords: '\b(?:abstract|case|catch|class|def|do|else|enum|export|extends|false|final|finally|for|forSome|given|if|implicit|import|inline|lazy|match|new|null|object|opaque|override|package|private|protected|return|sealed|super|then|this|throw|trait|true|try|type|using|val|var|while|with|yield)\b'
+  keywords: '\b(?:abstract|case|catch|class|def|do|else|enum|export|extends|extension|false|final|finally|for|forSome|given|if|implicit|import|inline|lazy|match|new|null|object|opaque|override|package|private|protected|return|sealed|super|then|this|throw|trait|true|try|type|using|val|var|while|with|yield)\b'
 
   # lookaround for operators
   nonopchar: '[[[:alpha:]]0-9\s\(\)\[\]\{\}'']'
@@ -378,6 +378,12 @@ contexts:
         2: entity.name.class.scala
       push: class-type-parameter-list
 
+    - match: '\b(extension)\s*'
+      scope: meta.class.identifier.scala
+      captures:
+        1: keyword.declaration.class.scala
+      push: class-type-parameter-list
+
     - match: '\b(?:(opaque)\s+)?(type)\s+({{id}})'
       captures:
         1: storage.type.scala
@@ -541,7 +547,7 @@ contexts:
   # this is included when a single newline is found in a declaration
   # you should never push/set this context, only include
   decl-newline-double-check:
-    - match: '(?=[\{\}\)]|\b(?:case|class|def|enum|val|var|trait|object|private|protected|for|while|if|inline|export|final|given|sealed|implicit|then|type|import|opaque|override|using)\b)'
+    - match: '(?=[\{\}\)]|\b(?:case|class|def|enum|extension|val|var|trait|object|private|protected|for|while|if|inline|export|final|given|sealed|implicit|then|type|import|opaque|override|using)\b)'
       pop: true
     - match: '\n'
       pop: true
